@@ -1,0 +1,6 @@
+@CerbiStream_Implementation_HostAddress = http://localhost:5087
+
+GET {{CerbiStream_Implementation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

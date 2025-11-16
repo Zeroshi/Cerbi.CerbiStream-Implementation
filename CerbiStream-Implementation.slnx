@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CerbiStream-Implementation.Tests/CerbiStream-Implementation.Tests.csproj" />
+  <Project Path="CerbiStream-Implementation/CerbiStream-Implementation.csproj" />
+</Solution>

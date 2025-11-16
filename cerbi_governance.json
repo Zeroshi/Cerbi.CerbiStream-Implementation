@@ -1,0 +1,10 @@
+{
+  "Version": "1.0.0",
+  "LoggingProfiles": {
+    "default": {
+      "RequiredFields": [ "message" ],
+      "DisallowedFields": [ "ssn", "creditCard" ],
+      "FieldSeverities": { "password": "Forbidden", "secretValue": "Forbidden" }
+    }
+  }
+}
