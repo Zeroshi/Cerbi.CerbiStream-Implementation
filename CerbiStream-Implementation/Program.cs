@@ -221,6 +221,23 @@ namespace CerbiStream.Configuration
             {
                 try { _profile = JsonSerializer.Deserialize<GovernanceProfile>(File.ReadAllText(_opts.GovernanceConfigPath)); } catch { }
             }
+            else
+            {
+                // Fallback default profile (used when governance JSON not deployed). Keeps demo & tests functional.
+                _profile = new GovernanceProfile
+                {
+                    Version = "fallback",
+                    LoggingProfiles = new Dictionary<string, ProfileDefinition>
+                    {
+                        [_opts.GovernanceProfileName] = new ProfileDefinition
+                        {
+                            DisallowedFields = new List<string>{"ssn","creditCard","password","npi","pem"},
+                            FieldSeverities = new Dictionary<string,string>{{"password","Forbidden"},{"secretValue","Forbidden"},{"npi","Forbidden"},{"pem","Forbidden"}},
+                            RequiredFields = new List<string>{"message"}
+                        }
+                    }
+                };
+            }
         }
         public IDisposable? BeginScope<TState>(TState state) => null; // Scope unused in demo
         public bool IsEnabled(LogLevel logLevel) => true; // Accept all levels in demo

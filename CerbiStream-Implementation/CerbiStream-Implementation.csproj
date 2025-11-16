@@ -9,8 +9,4 @@
   <ItemGroup>
     <PackageReference Include="CerbiStream.GovernanceAnalyzer" Version="1.1.36" PrivateAssets="all" />
   </ItemGroup>
-  <ItemGroup>
-    <!-- Use Link to ensure correct path resolution -->
-    <None Include="../cerbi_governance.json" Link="cerbi_governance.json" CopyToOutputDirectory="Always" />
-  </ItemGroup>
 </Project>
